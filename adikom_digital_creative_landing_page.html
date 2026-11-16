@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adikom — Solusi Lengkap Kebutuhan Digital, Administrasi & Kreatif Anda</title>
+    <meta name="description" content="Adikom Digital & Creative melayani jasa pengetikan & olah dokumen, desain grafis, fotografi & videografi acara, pembuatan website, serta layanan digital UMKM. Terima beres dari rumah!">
+    
+    <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome 6 CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0B132B',
+                            slate: '#1C2541',
+                            blue: '#0284C7',
+                            cyan: '#06B6D4',
+                            light: '#F8FAFC'
+                        }
+                    },
+                    boxShadow: {
+                        'soft': '0 10px 40px -10px rgba(11, 19, 43, 0.08)',
+                        'glow': '0 0 25px rgba(6, 182, 212, 0.35)'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased overflow-x-hidden selection:bg-cyan-500 selection:text-white">
+
+    <!-- ==================== NAVBAR RESPONSIF ==================== -->
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/90 backdrop-blur-md border-b border-slate-200/70">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo Brand -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-dark via-sky-700 to-cyan-500 flex items-center justify-center text-white font-display font-extrabold text-xl shadow-md group-hover:scale-105 transition-transform">
+                        A
+                    </div>
+                    <div>
+                        <span class="font-display font-extrabold text-xl tracking-tight text-brand-dark block leading-none">ADIKOM</span>
+                        <span class="text-[11px] font-medium text-sky-600 tracking-wider uppercase">Digital & Creative</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex items-center gap-8">
+                    <a href="#layanan" class="text-sm font-medium text-slate-600 hover:text-sky-600 transition-colors">Layanan</a>
+                    <a href="#keunggulan" class="text-sm font-medium text-slate-600 hover:text-sky-600 transition-colors">Keunggulan</a>
+                    <a href="#cara-pesan" class="text-sm font-medium text-slate-600 hover:text-sky-600 transition-colors">Cara Pemesanan</a>
+                    <a href="#paket" class="text-sm font-medium text-slate-600 hover:text-sky-600 transition-colors">Paket & Estimasi</a>
+                    <a href="#faq" class="text-sm font-medium text-slate-600 hover:text-sky-600 transition-colors">FAQ</a>
+                    <a href="#kontak" class="text-sm font-medium text-slate-600 hover:text-sky-600 transition-colors">Kontak</a>
+                </nav>
+
+                <!-- Desktop CTA -->
+                <div class="hidden lg:flex items-center gap-3">
+                    <a href="#pesan-cepat" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-sky-600 to-cyan-500 hover:from-sky-700 hover:to-cyan-600 text-white text-sm font-semibold shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5">
+                        <i class="fa-brands fa-whatsapp text-base"></i>
+                        <span>Pesan Sekarang</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" aria-label="Buka Menu" class="lg:hidden p-2.5 rounded-xl text-slate-700 hover:bg-slate-100 focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Navigation -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-2 shadow-xl">
+            <a href="#layanan" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-slate-700 hover:bg-sky-50 hover:text-sky-600">Layanan Lengkap</a>
+            <a href="#keunggulan" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-slate-700 hover:bg-sky-50 hover:text-sky-600">Keunggulan Kami</a>
+            <a href="#cara-pesan" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-slate-700 hover:bg-sky-50 hover:text-sky-600">Cara Pemesanan</a>
+            <a href="#paket" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-slate-700 hover:bg-sky-50 hover:text-sky-600">Paket & Estimasi</a>
+            <a href="#faq" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-slate-700 hover:bg-sky-50 hover:text-sky-600">Pertanyaan Umum (FAQ)</a>
+            <a href="#kontak" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-slate-700 hover:bg-sky-50 hover:text-sky-600">Kontak & Lokasi</a>
+            <div class="pt-2">
+                <a href="#pesan-cepat" class="mobile-link w-full flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-gradient-to-r from-sky-600 to-cyan-500 text-white font-semibold shadow-md">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Pesan Sekarang</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="relative pt-28 pb-20 lg:pt-36 lg:pb-28 bg-gradient-to-br from-brand-dark via-brand-slate to-slate-900 text-white overflow-hidden">
+        <!-- Decorative Background Orbs -->
+        <div class="absolute top-0 right-0 -mr-24 -mt-24 w-96 h-96 rounded-full bg-cyan-500/20 blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 -ml-24 -mb-24 w-80 h-80 rounded-full bg-sky-600/20 blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Left Copywriting -->
+                <div class="lg:col-span-7 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-cyan-300 text-xs sm:text-sm font-medium mb-6 backdrop-blur-sm">
+                        <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+                        <span>All-in-One Digital Services • Melayani Seluruh Indonesia</span>
+                    </div>
+
+                    <h1 class="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl xl:text-[52px] leading-tight tracking-tight mb-6">
+                        Solusi Lengkap Kebutuhan <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-sky-400">Digital, Administrasi & Kreatif</span> Anda
+                    </h1>
+
+                    <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0 mb-8">
+                        Mulai dari pengetikan dokumen & olah data, desain grafis profesional, dokumentasi foto & video acara, hingga pembuatan website bisnis. Praktis, rapi, dan <strong>terima beres langsung dari rumah!</strong>
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="https://wa.me/6285753987438?text=Halo%20Admin%20Adikom%2C%20saya%20ingin%20konsultasi%20mengenai%20layanan%20digital." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white font-semibold text-base shadow-lg shadow-emerald-500/25 transition-all transform hover:-translate-y-0.5">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            <span>Konsultasi Gratis via WhatsApp</span>
+                        </a>
+                        <a href="#layanan" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-2xl bg-white/10 hover:bg-white/15 border border-white/15 text-white font-semibold text-base transition-all">
+                            <span>Lihat Semua Layanan</span>
+                            <i class="fa-solid fa-arrow-down text-sm"></i>
+                        </a>
+                    </div>
+
+                    <!-- Mini Trust Badges -->
+                    <div class="mt-10 pt-8 border-t border-white/10 grid grid-cols-3 gap-4 max-w-lg mx-auto lg:mx-0">
+                        <div>
+                            <div class="font-display font-bold text-xl sm:text-2xl text-cyan-400">100%</div>
+                            <div class="text-xs text-slate-400 mt-0.5">Bisa Online & Cepat</div>
+                        </div>
+                        <div>
+                            <div class="font-display font-bold text-xl sm:text-2xl text-cyan-400">5 Kategori</div>
+                            <div class="text-xs text-slate-400 mt-0.5">Layanan Terpadu</div>
+                        </div>
+                        <div>
+                            <div class="font-display font-bold text-xl sm:text-2xl text-cyan-400">Gratis</div>
+                            <div class="text-xs text-slate-400 mt-0.5">Konsultasi & Revisi</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Aesthetic Service Mockup Card -->
+                <div class="lg:col-span-5">
+                    <div class="relative mx-auto max-w-md">
+                        <!-- Main Card -->
+                        <div class="rounded-3xl bg-white/10 backdrop-blur-xl border border-white/20 p-6 sm:p-7 shadow-2xl">
+                            <div class="flex items-center justify-between pb-4 mb-5 border-b border-white/10">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-xl bg-cyan-500/20 border border-cyan-400/30 flex items-center justify-center text-cyan-300">
+                                        <i class="fa-solid fa-layer-group"></i>
+                                    </div>
+                                    <div>
+                                        <h2 class="font-display font-bold text-white text-sm sm:text-base">Adikom Service Hub</h2>
+                                        <p class="text-xs text-cyan-300">Status: Siap Melayani Order</p>
+                                    </div>
+                                </div>
+                                <span class="px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-semibold border border-emerald-400/30">Online</span>
+                            </div>
+
+                            <!-- Mockup Checklist Items -->
+                            <div class="space-y-3.5">
+                                <div class="flex items-center gap-3.5 p-3.5 rounded-2xl bg-slate-900/60 border border-white/10 hover:border-cyan-400/40 transition-colors">
+                                    <div class="w-10 h-10 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center shrink-0">
+                                        <i class="fa-solid fa-file-word text-lg"></i>
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <p class="text-sm font-semibold text-white truncate">Pengetikan & Olah Dokumen</p>
+                                        <p class="text-xs text-slate-400 truncate">Skripsi, Format Word/Excel, Input Data</p>
+                                    </div>
+                                    <i class="fa-solid fa-circle-check text-emerald-400"></i>
+                                </div>
+
+                                <div class="flex items-center gap-3.5 p-3.5 rounded-2xl bg-slate-900/60 border border-white/10 hover:border-cyan-400/40 transition-colors">
+                                    <div class="w-10 h-10 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center shrink-0">
+                                        <i class="fa-solid fa-pen-nib text-lg"></i>
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <p class="text-sm font-semibold text-white truncate">Desain Grafis & Percetakan</p>
+                                        <p class="text-xs text-slate-400 truncate">Poster, Feed IG, Undangan, Sertifikat</p>
+                                    </div>
+                                    <i class="fa-solid fa-circle-check text-emerald-400"></i>
+                                </div>
+
+                                <div class="flex items-center gap-3.5 p-3.5 rounded-2xl bg-slate-900/60 border border-white/10 hover:border-cyan-400/40 transition-colors">
+                                    <div class="w-10 h-10 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center shrink-0">
+                                        <i class="fa-solid fa-camera-retro text-lg"></i>
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <p class="text-sm font-semibold text-white truncate">Fotografi & Videografi Acara</p>
+                                        <p class="text-xs text-slate-400 truncate">Wisuda, Lamaran, Event & Editing Reels</p>
+                                    </div>
+                                    <i class="fa-solid fa-circle-check text-emerald-400"></i>
+                                </div>
+
+                                <div class="flex items-center gap-3.5 p-3.5 rounded-2xl bg-slate-900/60 border border-white/10 hover:border-cyan-400/40 transition-colors">
+                                    <div class="w-10 h-10 rounded-xl bg-teal-500/20 text-teal-400 flex items-center justify-center shrink-0">
+                                        <i class="fa-solid fa-laptop-code text-lg"></i>
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <p class="text-sm font-semibold text-white truncate">Website, Aplikasi & Jasa Digital</p>
+                                        <p class="text-xs text-slate-400 truncate">Landing Page UMKM, Kasir Web, CV, Maps</p>
+                                    </div>
+                                    <i class="fa-solid fa-circle-check text-emerald-400"></i>
+                                </div>
+                            </div>
+
+                            <div class="mt-5 pt-4 border-t border-white/10 flex items-center justify-between text-xs text-slate-300">
+                                <span><i class="fa-solid fa-location-dot text-cyan-400 mr-1.5"></i>Tabalong & Online Nasional</span>
+                                <span class="text-cyan-300 font-semibold">Fast Response <i class="fa-solid fa-bolt ml-1"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SECTION LAYANAN LENGKAP (DENGAN FILTER) ==================== -->
+    <section id="layanan" class="py-20 lg:py-28 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="inline-block px-3.5 py-1 rounded-full bg-sky-100 text-sky-700 text-xs font-bold uppercase tracking-wider mb-3">Katalog Layanan</span>
+                <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-brand-dark mb-4">Layanan Lengkap Adikom</h2>
+                <p class="text-slate-600 text-base sm:text-lg">
+                    Pilih kategori layanan sesuai kebutuhan Anda. Klik tombol <strong>"Tanya Layanan Ini"</strong> untuk langsung terhubung dengan admin kami via WhatsApp.
+                </p>
+            </div>
+
+            <!-- Category Filter Buttons -->
+            <div class="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 mb-12" id="filter-buttons">
+                <button data-filter="all" class="filter-btn active px-5 py-2.5 rounded-xl text-sm font-semibold transition-all bg-brand-dark text-white shadow-md">
+                    Semua Layanan
+                </button>
+                <button data-filter="dokumen" class="filter-btn px-5 py-2.5 rounded-xl text-sm font-semibold transition-all bg-white text-slate-600 border border-slate-200 hover:border-sky-400 hover:text-sky-600">
+                    Dokumen & Data
+                </button>
+                <button data-filter="desain-foto" class="filter-btn px-5 py-2.5 rounded-xl text-sm font-semibold transition-all bg-white text-slate-600 border border-slate-200 hover:border-sky-400 hover:text-sky-600">
+                    Desain & Foto
+                </button>
+                <button data-filter="web-digital" class="filter-btn px-5 py-2.5 rounded-xl text-sm font-semibold transition-all bg-white text-slate-600 border border-slate-200 hover:border-sky-400 hover:text-sky-600">
+                    Web & Digital
+                </button>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7" id="services-grid">
+                
+                <!-- Card 1: Pengetikan & Olah Dokumen -->
+                <div class="service-card group bg-white rounded-3xl p-7 border border-slate-200/80 shadow-soft hover:shadow-xl hover:border-sky-300 transition-all duration-300 flex flex-col justify-between" data-category="dokumen">
+                    <div>
+                        <div class="flex items-center justify-between mb-5">
+                            <div class="w-14 h-14 rounded-2xl bg-sky-50 text-sky-600 group-hover:bg-sky-600 group-hover:text-white flex items-center justify-center text-2xl transition-colors">
+                                <i class="fa-solid fa-file-lines"></i>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-semibold">Dokumen & Data</span>
+                        </div>
+                        <h3 class="font-display font-bold text-xl text-brand-dark mb-2.5">Jasa Pengetikan & Olah Dokumen</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-5">
+                            Bantu ketik ulang dokumen, merapikan layout sesuai pedoman penulisan resmi, hingga pengolahan data spreadsheet secara akurat.
+                        </p>
+                        <div class="space-y-2 mb-6">
+                            <p class="text-xs font-bold uppercase tracking-wider text-slate-400">Contoh Layanan:</p>
+                            <ul class="space-y-2 text-sm text-slate-700">
+                                <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-cyan-500 mt-1 text-xs"></i><span>Skripsi, Makalah, Laporan & Karya Ilmiah</span></li>
+                                <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-cyan-500 mt-1 text-xs"></i><span>Rapikan Format Word (Margin, Daftar Isi Otomatis)</span></li>
+                                <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-cyan-500 mt-1 text-xs"></i><span>Input Data Excel, Rumus & Rekapitulasi</span></li>
+                                <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-cyan-500 mt-1 text-xs"></i><span>Convert PDF ke Word/Excel & Surat Menyurat</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/6285753987438?text=Halo%20Admin%20Adikom%2C%20saya%20ingin%20tanya%20layanan%20*Jasa%20Pengetikan%20%26%20Olah%20Dokumen*." target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-slate-900 hover:bg-sky-600 text-white text-sm font-semibold transition-colors">
+                        <i class="fa-brands fa-whatsapp text-base"></i>
+                        <span>Tanya Layanan Ini</span>
+                    </a>
+                </div>
+
+                <!-- Card 2: Desain Grafis & Percetakan -->
+                <div class="service-card group bg-white rounded-3xl p-7 border border-slate-200/80 shadow-soft hover:shadow-xl hover:border-sky-300 transition-all duration-300 flex flex-col justify-between" data-category="desain-foto">
+                    <div>
+                        <div class="flex items-center justify-between mb-5">
+                            <div class="w-14 h-14 rounded-2xl bg-cyan-50 text-cyan-600 group-hover:bg-cyan-600 group-hover:text-white flex items-center justify-center text-2xl transition-colors">
+                                <i class="fa-solid fa-palette"></i>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-semibold">Desain & Foto</span>
+                        </div>
+                        <h3 class="font-display font-bold text-xl text-brand-dark mb-2.5">Desain Grafis & Percetakan</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-5">
+                            Wujudkan visual promosi, identitas acara, dan materi edukasi yang menarik, tajam, dan siap cetak maupun publikasi digital.
+                        </p>
+                        <div class="space-y-2 mb-6">
+                            <p class="text-xs font-bold uppercase tracking-wider text-slate-400">Contoh Layanan:</p>
+                            <ul class="space-y-2 text-sm text-slate-700">
+                                <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-cyan-500 mt-1 text-xs"></i><span>Desain Poster, Spanduk/Banner & Feed/Story IG</span></li>
+                                <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-cyan-500 mt-1 text-xs"></i><span>Undangan Digital (Gambar/Video) & Cetak</span></li>
+                                <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-cyan-500 mt-1 text-xs"></i><span>Kartu Nama, ID Card, Brosur & Sertifikat</span></li>
+                                <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-cyan-500 mt-1 text-xs"></i><span>Layout Modul Ajar & Worksheet Edukasi</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/6285753987438?text=Halo%20Admin%20Adikom%2C%20saya%20ingin%20tanya%20layanan%20*Desain%20Grafis%20%26%20Percetakan*." target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-slate-900 hover:bg-sky-600 text-white text-sm font-semibold transition-colors">
+                        <i class="fa-brands fa-whatsapp text-base"></i>
+                        <span>Tanya Layanan Ini</span>
+                    </a>
+                </div>
+
+                <!-- Card 3: Fotografi & Videografi Acara -->
+                <div class="service-card group bg-white rounded-3xl p-7 border border-slate-200/80 shadow-soft hover:shadow-xl hover:border-sky-300 transition-all duration-300 flex flex-col justify-between" data-category="desain-foto">
+                    <div>
+                        <div class="flex items-center justify-between mb-5">
+                            <div class="w-14 h-14 rounded-2xl bg-indigo-50 text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white flex items-center justify-center text-2xl transition-colors">
+                                <i class="fa-solid fa-camera"></i>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-semibold">Desain & Foto</span>
+                        </div>
+                        <h3 class="font-display font-bold text-xl text-brand-dark mb-2.5">Fotografi & Videografi Acara</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-5">
+                            Abadikan setiap momen berharga dengan hasil jernih, komposisi estetik, serta jasa editing video kekinian untuk media sosial.
+                        </p>
+                        <div class="space-y-2 mb-6">
+                            <p class="text-xs font-bold uppercase tracking-wider text-slate-400">Contoh Layanan:</p>
+                            <ul class="space-y-2 text-sm text-slate-700">
+                                <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-cyan-500 mt-1 text-xs"></i><span>Foto Wisuda Outdoor / Indoor & Keluarga</span></li>
+                                <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-cyan-500 mt-1 text-xs"></i><span>Dokumentasi Pernikahan, Lamaran & Akad</span></li>
+                                <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-cyan-500 mt-1 text-xs"></i><span>Liputan Event Sekolah, Seminar & Kantor</span></li>
+                                <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-cyan-500 mt-1 text-xs"></i><span>Jasa Editing Video Highlight, Reels & CapCut</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/6285753987438?text=Halo%20Admin%20Adikom%2C%20saya%20ingin%20tanya%20layanan%20*Fotografi%20%26%20Videografi%20Acara*." target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-slate-900 hover:bg-sky-600 text-white text-sm font-semibold transition-colors">
+                        <i class="fa-brands fa-whatsapp text-base"></i>
+                        <span>Tanya Layanan Ini</span>
+                    </a>
+                </div>
+
+                <!-- Card 4: Pembuatan Website & Aplikasi Web -->
+                <div class="service-card group bg-white rounded-3xl p-7 border border-slate-200/80 shadow-soft hover:shadow-xl hover:border-sky-300 transition-all duration-300 flex flex-col justify-between" data-category="web-digital">
+                    <div>
+                        <div class="flex items-center justify-between mb-5">
+                            <div class="w-14 h-14 rounded-2xl bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white flex items-center justify-center text-2xl transition-colors">
+                                <i class="fa-solid fa-code"></i>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-semibold">Web & Digital</span>
+                        </div>
+                        <h3 class="font-display font-bold text-xl text-brand-dark mb-2.5">Pembuatan Website & Aplikasi Web</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-5">
+                            Tingkatkan kredibilitas usaha dan efisiensi operasional melalui website modern, cepat, responsif, dan mudah dikelola.
+                        </p>
+                        <div class="space-y-2 mb-6">
+                            <p class="text-xs font-bold uppercase tracking-wider text-slate-400">Contoh Layanan:</p>
+                            <ul class="space-y-2 text-sm text-slate-700">
+                                <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-cyan-500 mt-1 text-xs"></i><span>Landing Page UMKM, Jasa & Company Profile</span></li>
+                                <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-cyan-500 mt-1 text-xs"></i><span>Website Sekolah, Yayasan & Organisasi</span></li>
+                                <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-cyan-500 mt-1 text-xs"></i><span>Sistem Informasi / Aplikasi Kasir & Admin Sederhana</span></li>
+                                <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-cyan-500 mt-1 text-xs"></i><span>Undangan Pernikahan Berbasis Web (RSVP)</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/6285753987438?text=Halo%20Admin%20Adikom%2C%20saya%20ingin%20tanya%20layanan%20*Pembuatan%20Website%20%26%20Aplikasi%20Web*." target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-slate-900 hover:bg-sky-600 text-white text-sm font-semibold transition-colors">
+                        <i class="fa-brands fa-whatsapp text-base"></i>
+                        <span>Tanya Layanan Ini</span>
+                    </a>
+                </div>
+
+                <!-- Card 5: Layanan Digital & Administrasi Online -->
+                <div class="service-card group bg-white rounded-3xl p-7 border border-slate-200/80 shadow-soft hover:shadow-xl hover:border-sky-300 transition-all duration-300 flex flex-col justify-between md:col-span-2 lg:col-span-2" data-category="web-digital dokumen">
+                    <div>
+                        <div class="flex items-center justify-between mb-5">
+                            <div class="w-14 h-14 rounded-2xl bg-teal-50 text-teal-600 group-hover:bg-teal-600 group-hover:text-white flex items-center justify-center text-2xl transition-colors">
+                                <i class="fa-solid fa-globe"></i>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-cyan-50 text-cyan-700 text-xs font-semibold">Administrasi & Digital</span>
+                        </div>
+                        <h3 class="font-display font-bold text-xl text-brand-dark mb-2.5">Layanan Digital & Administrasi Online</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-5">
+                            Solusi praktis untuk kebutuhan karir, pemberkasan online, hingga visibilitas bisnis lokal agar lebih mudah ditemukan pelanggan di internet.
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                            <div class="space-y-2">
+                                <p class="text-xs font-bold uppercase tracking-wider text-slate-400">Personal & Karir:</p>
+                                <ul class="space-y-2 text-sm text-slate-700">
+                                    <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-cyan-500 mt-1 text-xs"></i><span>Pembuatan CV ATS-Friendly & CV Kreatif</span></li>
+                                    <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-cyan-500 mt-1 text-xs"></i><span>Portofolio Digital & Surat Lamaran Kerja</span></li>
+                                    <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-cyan-500 mt-1 text-xs"></i><span>Bantu Pendaftaran Online & Pemberkasan Digital</span></li>
+                                </ul>
+                            </div>
+                            <div class="space-y-2">
+                                <p class="text-xs font-bold uppercase tracking-wider text-slate-400">Bisnis & UMKM:</p>
+                                <ul class="space-y-2 text-sm text-slate-700">
+                                    <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-cyan-500 mt-1 text-xs"></i><span>Pembuatan & Optimasi Titik Google Maps Bisnis</span></li>
+                                    <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-cyan-500 mt-1 text-xs"></i><span>Setup Link Bio (Linktree/Katalog WA) UMKM</span></li>
+                                    <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-cyan-500 mt-1 text-xs"></i><span>Konsultasi Digitalisasi Usaha Kecil & Menengah</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/6285753987438?text=Halo%20Admin%20Adikom%2C%20saya%20ingin%20tanya%20layanan%20*Layanan%20Digital%20%26%20Administrasi%20Online*." target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-slate-900 hover:bg-sky-600 text-white text-sm font-semibold transition-colors">
+                        <i class="fa-brands fa-whatsapp text-base"></i>
+                        <span>Tanya Layanan Ini</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SECTION KEUNGGULAN ADIKOM ==================== -->
+    <section id="keunggulan" class="py-20 lg:py-24 bg-white border-y border-slate-200/70">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="inline-block px-3.5 py-1 rounded-full bg-cyan-50 text-cyan-700 text-xs font-bold uppercase tracking-wider mb-3">Mengapa Adikom?</span>
+                <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-brand-dark mb-4">Keunggulan Layanan Kami</h2>
+                <p class="text-slate-600 text-base sm:text-lg">
+                    Kami berkomitmen memberikan hasil kerja terbaik yang memudahkan urusan akademik, acara, maupun bisnis Anda.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Advantage 1 -->
+                <div class="p-7 rounded-3xl bg-slate-50 border border-slate-200/60 hover:bg-white hover:shadow-soft transition-all">
+                    <div class="w-12 h-12 rounded-2xl bg-sky-600 text-white flex items-center justify-center text-xl mb-5 shadow-md shadow-sky-600/20">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-lg text-brand-dark mb-2">Pengerjaan Cepat & Rapi</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Setiap detail dokumen, desain, maupun kode website dikerjakan dengan teliti, terstruktur, dan tepat waktu sesuai deadline Anda.
+                    </p>
+                </div>
+
+                <!-- Advantage 2 -->
+                <div class="p-7 rounded-3xl bg-slate-50 border border-slate-200/60 hover:bg-white hover:shadow-soft transition-all">
+                    <div class="w-12 h-12 rounded-2xl bg-cyan-500 text-white flex items-center justify-center text-xl mb-5 shadow-md shadow-cyan-500/20">
+                        <i class="fa-solid fa-tags"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-lg text-brand-dark mb-2">Harga Terjangkau & Transparan</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Estimasi biaya disepakati di awal sebelum pengerjaan dimulai. Ramah di kantong pelajar, mahasiswa, hingga pelaku UMKM.
+                    </p>
+                </div>
+
+                <!-- Advantage 3 -->
+                <div class="p-7 rounded-3xl bg-slate-50 border border-slate-200/60 hover:bg-white hover:shadow-soft transition-all">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-dark text-white flex items-center justify-center text-xl mb-5 shadow-md">
+                        <i class="fa-solid fa-house-laptop"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-lg text-brand-dark mb-2">Bisa Online (Terima Beres)</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Tidak perlu repot keluar rumah. Cukup kirim materi via WhatsApp atau Google Drive, file hasil dikirim siap pakai dalam berbagai format.
+                    </p>
+                </div>
+
+                <!-- Advantage 4 -->
+                <div class="p-7 rounded-3xl bg-slate-50 border border-slate-200/60 hover:bg-white hover:shadow-soft transition-all">
+                    <div class="w-12 h-12 rounded-2xl bg-emerald-500 text-white flex items-center justify-center text-xl mb-5 shadow-md shadow-emerald-500/20">
+                        <i class="fa-solid fa-comments"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-lg text-brand-dark mb-2">Konsultasi Gratis & Revisi Fleksibel</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Bingung mulai dari mana? Diskusikan kebutuhan Anda secara gratis. Kami menyediakan revisi fleksibel hingga hasil sesuai harapan.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SECTION CARA PEMESANAN (4 LANGKAH) ==================== -->
+    <section id="cara-pesan" class="py-20 lg:py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="inline-block px-3.5 py-1 rounded-full bg-sky-100 text-sky-700 text-xs font-bold uppercase tracking-wider mb-3">Alur Kerja Praktis</span>
+                <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-brand-dark mb-4">4 Langkah Mudah Pemesanan</h2>
+                <p class="text-slate-600 text-base sm:text-lg">
+                    Proses pemesanan dirancang simpel, cepat, dan aman tanpa ribet.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+                <!-- Step 1 -->
+                <div class="bg-white rounded-3xl p-7 border border-slate-200/80 shadow-soft relative">
+                    <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-sky-600 to-cyan-500 text-white font-display font-extrabold text-lg flex items-center justify-center mb-5 shadow-md">
+                        1
+                    </div>
+                    <h3 class="font-display font-bold text-lg text-brand-dark mb-2">Konsultasi via WA</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Hubungi admin Adikom melalui WhatsApp dan ceritakan detail kebutuhan layanan serta target waktu pengerjaan Anda.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="bg-white rounded-3xl p-7 border border-slate-200/80 shadow-soft relative">
+                    <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-sky-600 to-cyan-500 text-white font-display font-extrabold text-lg flex items-center justify-center mb-5 shadow-md">
+                        2
+                    </div>
+                    <h3 class="font-display font-bold text-lg text-brand-dark mb-2">Kirim Materi & Deal Harga</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Kirimkan bahan/materi (teks, foto, data, atau jadwal acara) lalu sepakati estimasi biaya dan waktu selesai.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="bg-white rounded-3xl p-7 border border-slate-200/80 shadow-soft relative">
+                    <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-sky-600 to-cyan-500 text-white font-display font-extrabold text-lg flex items-center justify-center mb-5 shadow-md">
+                        3
+                    </div>
+                    <h3 class="font-display font-bold text-lg text-brand-dark mb-2">Proses Pengerjaan</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Tim Adikom langsung mengerjakan pesanan Anda secara profesional dengan update progres secara berkala.
+                    </p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="bg-white rounded-3xl p-7 border border-slate-200/80 shadow-soft relative">
+                    <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-500 text-white font-display font-extrabold text-lg flex items-center justify-center mb-5 shadow-md">
+                        4
+                    </div>
+                    <h3 class="font-display font-bold text-lg text-brand-dark mb-2">Hasil Dikirim & Revisi</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Preview hasil dikirimkan kepada Anda. Jika sudah sesuai, file master/final dikirimkan lengkap dan siap digunakan!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SECTION PAKET POPULER & FORM PEMESANAN CEPAT ==================== -->
+    <section id="paket" class="py-20 lg:py-28 bg-brand-dark text-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                
+                <!-- Left Column: Paket Populer / Gambaran Layanan -->
+                <div class="lg:col-span-6 space-y-6">
+                    <div>
+                        <span class="inline-block px-3.5 py-1 rounded-full bg-cyan-500/20 text-cyan-300 text-xs font-bold uppercase tracking-wider mb-3 border border-cyan-400/30">Paket Populer</span>
+                        <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-white mb-4">Solusi Fleksibel Sesuai Skala Kebutuhan</h2>
+                        <p class="text-slate-300 text-base leading-relaxed">
+                            Harga menyesuaikan tingkat kesulitan, jumlah halaman/desain, atau durasi acara. Berikut gambaran paket yang paling sering dipesan pelanggan kami:
+                        </p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <!-- Paket 1 -->
+                        <div class="p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-cyan-400/40 transition-all">
+                            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                                <h3 class="font-display font-bold text-lg text-cyan-300">Paket Pelajar & Mahasiswa</h3>
+                                <span class="px-3 py-1 rounded-lg bg-sky-500/20 text-sky-300 text-xs font-semibold">Mulai Rp 15.000-an</span>
+                            </div>
+                            <p class="text-sm text-slate-300">
+                                Pengetikan dokumen, rapikan margin/daftar isi skripsi & makalah, desain poster tugas, CV ATS-Friendly, hingga editing video pendek.
+                            </p>
+                        </div>
+
+                        <!-- Paket 2 -->
+                        <div class="p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-cyan-400/40 transition-all">
+                            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                                <h3 class="font-display font-bold text-lg text-cyan-300">Paket UMKM & Go-Digital</h3>
+                                <span class="px-3 py-1 rounded-lg bg-emerald-500/20 text-emerald-300 text-xs font-semibold">Best Seller</span>
+                            </div>
+                            <p class="text-sm text-slate-300">
+                                Pembuatan Landing Page bisnis, pendaftaran Google Maps usaha, desain spanduk/logo, katalog produk, hingga sistem kasir/admin sederhana.
+                            </p>
+                        </div>
+
+                        <!-- Paket 3 -->
+                        <div class="p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-cyan-400/40 transition-all">
+                            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                                <h3 class="font-display font-bold text-lg text-cyan-300">Paket Dokumentasi & Event</h3>
+                                <span class="px-3 py-1 rounded-lg bg-indigo-500/20 text-indigo-300 text-xs font-semibold">Custom Paket</span>
+                            </div>
+                            <p class="text-sm text-slate-300">
+                                Sesi foto wisuda, dokumentasi acara lamaran/pernikahan, liputan kegiatan sekolah/instansi, lengkap dengan undangan digital & sertifikat acara.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Interactive Quick Order Form -->
+                <div id="pesan-cepat" class="lg:col-span-6">
+                    <div class="bg-white text-slate-800 rounded-3xl p-7 sm:p-9 shadow-2xl border border-slate-200">
+                        <div class="flex items-center gap-3 mb-2">
+                            <div class="w-10 h-10 rounded-xl bg-cyan-50 text-cyan-600 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-paper-plane"></i>
+                            </div>
+                            <h3 class="font-display font-extrabold text-2xl text-brand-dark">Simulasi & Pesan Cepat</h3>
+                        </div>
+                        <p class="text-sm text-slate-500 mb-6">
+                            Isi form singkat di bawah ini untuk membuat format pesanan otomatis yang langsung terhubung ke WhatsApp Adikom.
+                        </p>
+
+                        <!-- Alert / Validation Box (No browser alert()) -->
+                        <div id="form-feedback" class="hidden mb-5 p-3.5 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-sm flex items-center gap-2.5">
+                            <i class="fa-solid fa-circle-exclamation"></i>
+                            <span id="form-feedback-text">Mohon lengkapi data terlebih dahulu.</span>
+                        </div>
+
+                        <form id="quick-order-form" class="space-y-4">
+                            <div>
+                                <label for="customer-name" class="block text-sm font-semibold text-slate-700 mb-1.5">Nama Lengkap / Instansi <span class="text-rose-500">*</span></label>
+                                <input type="text" id="customer-name" placeholder="Contoh: Budi Santoso / Toko Berkah" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-sky-500 focus:ring-2 focus:ring-sky-500/20 outline-none text-sm transition-all">
+                            </div>
+
+                            <div>
+                                <label for="service-select" class="block text-sm font-semibold text-slate-700 mb-1.5">Pilih Kategori Layanan <span class="text-rose-500">*</span></label>
+                                <select id="service-select" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-sky-500 focus:ring-2 focus:ring-sky-500/20 outline-none text-sm bg-white transition-all">
+                                    <option value="">-- Pilih Layanan yang Dibutuhkan --</option>
+                                    <option value="Jasa Pengetikan & Olah Dokumen">Jasa Pengetikan & Olah Dokumen (Word/Excel/PDF)</option>
+                                    <option value="Desain Grafis & Percetakan">Desain Grafis & Percetakan (Poster/Undangan/Sertifikat)</option>
+                                    <option value="Fotografi & Videografi Acara">Fotografi & Videografi Acara (Wisuda/Event/Editing)</option>
+                                    <option value="Pembuatan Website & Aplikasi Web">Pembuatan Website & Aplikasi Web (Landing Page/Sistem)</option>
+                                    <option value="Layanan Digital & Administrasi Online">Layanan Digital & Administrasi Online (CV/Google Maps)</option>
+                                    <option value="Kombinasi Beberapa Layanan">Kombinasi Beberapa Layanan Sekaligus</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="deadline-input" class="block text-sm font-semibold text-slate-700 mb-1.5">Target Waktu Selesai (Opsional)</label>
+                                <input type="text" id="deadline-input" placeholder="Contoh: Besok sore / Akhir minggu ini / Fleksibel" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-sky-500 focus:ring-2 focus:ring-sky-500/20 outline-none text-sm transition-all">
+                            </div>
+
+                            <div>
+                                <label for="project-desc" class="block text-sm font-semibold text-slate-700 mb-1.5">Deskripsi Singkat Kebutuhan <span class="text-rose-500">*</span></label>
+                                <textarea id="project-desc" rows="3" placeholder="Ceritakan singkat detail pesanan Anda (misal: rapikan format skripsi 80 halaman, atau buat website profil usaha)..." class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-sky-500 focus:ring-2 focus:ring-sky-500/20 outline-none text-sm transition-all"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-4 px-6 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white font-bold text-base shadow-lg shadow-emerald-500/25 flex items-center justify-center gap-2.5 transition-all transform hover:-translate-y-0.5 cursor-pointer">
+                                <i class="fa-brands fa-whatsapp text-xl"></i>
+                                <span>Kirim Pesanan ke WhatsApp</span>
+                            </button>
+                            <p class="text-center text-xs text-slate-400">
+                                Akan langsung membuka WhatsApp Admin Adikom (0857-5398-7438)
+                            </p>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SECTION FAQ (ACCORDION) ==================== -->
+    <section id="faq" class="py-20 lg:py-24 bg-slate-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="inline-block px-3.5 py-1 rounded-full bg-sky-100 text-sky-700 text-xs font-bold uppercase tracking-wider mb-3">Pertanyaan Umum</span>
+                <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-brand-dark mb-4">Sering Ditanyakan (FAQ)</h2>
+                <p class="text-slate-600 text-base">
+                    Informasi seputar sistem pemesanan, pembayaran, dan garansi layanan di Adikom.
+                </p>
+            </div>
+
+            <div class="space-y-4" id="faq-container">
+                <!-- FAQ 1 -->
+                <div class="faq-item bg-white rounded-2xl border border-slate-200/80 overflow-hidden shadow-sm">
+                    <button class="faq-btn w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-display font-bold text-base sm:text-lg text-brand-dark hover:text-sky-600 transition-colors">
+                        <span>Apakah pemesanan bisa dilakukan 100% secara online dari luar kota?</span>
+                        <i class="fa-solid fa-chevron-down text-sm text-slate-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5 text-sm sm:text-base text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                        Tentu saja! Untuk layanan pengetikan dokumen, olah data, desain grafis, editing video, pembuatan website, dan administrasi online, kami melayani pelanggan dari <strong>seluruh Indonesia</strong> secara online via WhatsApp, Email, atau Google Drive. Khusus layanan fotografi/videografi lapangan, saat ini mencakup area Tabalong, Kalimantan Selatan dan sekitarnya.
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="faq-item bg-white rounded-2xl border border-slate-200/80 overflow-hidden shadow-sm">
+                    <button class="faq-btn w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-display font-bold text-base sm:text-lg text-brand-dark hover:text-sky-600 transition-colors">
+                        <span>Bagaimana sistem pembayaran di Adikom?</span>
+                        <i class="fa-solid fa-chevron-down text-sm text-slate-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5 text-sm sm:text-base text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                        Pembayaran sangat fleksibel dan aman. Untuk pekerjaan ringan/cepat, pembayaran bisa dilakukan setelah preview hasil selesai. Untuk proyek skala menengah/besar (seperti pembuatan website atau booking fotografi acara), cukup DP (uang muka) di awal dan pelunasan setelah hasil final siap diserahkan. Mendukung transfer bank dan e-wallet (DANA, OVO, GoPay, QRIS).
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="faq-item bg-white rounded-2xl border border-slate-200/80 overflow-hidden shadow-sm">
+                    <button class="faq-btn w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-display font-bold text-base sm:text-lg text-brand-dark hover:text-sky-600 transition-colors">
+                        <span>Berapa lama estimasi waktu pengerjaannya?</span>
+                        <i class="fa-solid fa-chevron-down text-sm text-slate-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5 text-sm sm:text-base text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                        Lama pengerjaan bergantung pada jenis dan kerumitan pesanan. Untuk pengetikan singkat, desain poster/undangan, atau CV biasanya selesai dalam <strong>1x24 jam (bahkan bisa ekspres di hari yang sama)</strong>. Untuk website atau dokumentasi lengkap, estimasi waktu akan kami informasikan secara transparan di awal.
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="faq-item bg-white rounded-2xl border border-slate-200/80 overflow-hidden shadow-sm">
+                    <button class="faq-btn w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-display font-bold text-base sm:text-lg text-brand-dark hover:text-sky-600 transition-colors">
+                        <span>Apakah ada garansi revisi jika hasil belum sesuai?</span>
+                        <i class="fa-solid fa-chevron-down text-sm text-slate-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5 text-sm sm:text-base text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                        Ya, kami memberikan <strong>garansi revisi fleksibel</strong> untuk memastikan dokumen, desain, maupun fitur website sesuai dengan kesepakatan awal. Kami juga menjaga kerahasiaan penuh atas seluruh data, dokumen pribadi, maupun berkas akademik pelanggan.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer id="kontak" class="bg-brand-dark text-slate-300 pt-16 pb-10 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-white/10">
+                
+                <!-- Brand Info -->
+                <div class="lg:col-span-5">
+                    <a href="#" class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-sky-500 to-cyan-400 flex items-center justify-center text-brand-dark font-display font-extrabold text-xl">
+                            A
+                        </div>
+                        <div>
+                            <span class="font-display font-extrabold text-xl tracking-tight text-white block leading-none">ADIKOM</span>
+                            <span class="text-[11px] font-medium text-cyan-400 tracking-wider uppercase">Digital & Creative</span>
+                        </div>
+                    </a>
+                    <p class="text-sm text-slate-400 leading-relaxed max-w-md mb-6">
+                        Solusi lengkap kebutuhan digital, administrasi, dan kreatif Anda. Membantu pelajar, mahasiswa, pekerja, hingga pelaku UMKM menyelesaikan kebutuhan digital dengan cepat, rapi, dan terpercaya.
+                    </p>
+                    <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/5 border border-white/10 text-xs text-cyan-300">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span>Privasi Dokumen & Data Pelanggan Terjamin Aman</span>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="lg:col-span-3">
+                    <h4 class="font-display font-bold text-white text-base mb-4">Menu Navigasi</h4>
+                    <ul class="space-y-2.5 text-sm">
+                        <li><a href="#layanan" class="hover:text-cyan-400 transition-colors">Katalog Layanan</a></li>
+                        <li><a href="#keunggulan" class="hover:text-cyan-400 transition-colors">Keunggulan Adikom</a></li>
+                        <li><a href="#cara-pesan" class="hover:text-cyan-400 transition-colors">Cara Pemesanan</a></li>
+                        <li><a href="#paket" class="hover:text-cyan-400 transition-colors">Paket & Form Cepat</a></li>
+                        <li><a href="#faq" class="hover:text-cyan-400 transition-colors">Pertanyaan Umum (FAQ)</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact & Operational Hours -->
+                <div class="lg:col-span-4">
+                    <h4 class="font-display font-bold text-white text-base mb-4">Kontak & Operasional</h4>
+                    <ul class="space-y-3.5 text-sm">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-brands fa-whatsapp text-emerald-400 text-lg mt-0.5"></i>
+                            <div>
+                                <span class="block text-xs text-slate-400">WhatsApp Admin (Fast Response)</span>
+                                <a href="https://wa.me/6285753987438" target="_blank" rel="noopener noreferrer" class="text-white font-semibold hover:text-cyan-400 transition-colors">0857-5398-7438</a>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot text-cyan-400 text-base mt-1"></i>
+                            <div>
+                                <span class="block text-xs text-slate-400">Lokasi Basis</span>
+                                <span class="text-white font-medium">Tabalong, Kalimantan Selatan</span>
+                                <span class="block text-xs text-cyan-300 mt-0.5">Melayani Seluruh Indonesia secara Online</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-clock text-sky-400 text-base mt-1"></i>
+                            <div>
+                                <span class="block text-xs text-slate-400">Jam Operasional</span>
+                                <span class="text-white font-medium">Senin – Minggu: 08.00 – 22.00 WITA</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+                <p>&copy; <span id="current-year">2026</span> <strong>Adikom Digital & Creative</strong>. Hak Cipta Dilindungi.</p>
+                <p>All-in-One Digital Services • Cepat, Rapi & Terpercaya</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== FLOATING WHATSAPP BUTTON ==================== -->
+    <a href="https://wa.me/6285753987438?text=Halo%20Admin%20Adikom%2C%20saya%20ingin%20bertanya%20tentang%20layanan%20digital." target="_blank" rel="noopener noreferrer" aria-label="Chat WhatsApp Adikom" class="fixed bottom-5 right-5 z-50 group flex items-center gap-3 bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-3.5 rounded-full shadow-xl shadow-emerald-600/30 transition-all transform hover:scale-105">
+        <i class="fa-brands fa-whatsapp text-2xl"></i>
+        <span class="hidden sm:inline-block font-semibold text-sm pr-1">Chat Admin WA</span>
+    </a>
+
+    <!-- ==================== VANILLA JAVASCRIPT ==================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Set Current Year in Footer
+            const yearEl = document.getElementById('current-year');
+            if (yearEl) {
+                yearEl.textContent = new Date().getFullYear();
+            }
+
+            // 2. Mobile Menu Toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            mobileMenuBtn.addEventListener('click', () => {
+                const isHidden = mobileMenu.classList.contains('hidden');
+                if (isHidden) {
+                    mobileMenu.classList.remove('hidden');
+                    menuIcon.classList.remove('fa-bars');
+                    menuIcon.classList.add('fa-xmark');
+                } else {
+                    mobileMenu.classList.add('hidden');
+                    menuIcon.classList.remove('fa-xmark');
+                    menuIcon.classList.add('fa-bars');
+                }
+            });
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    menuIcon.classList.remove('fa-xmark');
+                    menuIcon.classList.add('fa-bars');
+                });
+            });
+
+            // 3. Interactive Category Filter for Services
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const serviceCards = document.querySelectorAll('.service-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Update active button style
+                    filterBtns.forEach(b => {
+                        b.classList.remove('bg-brand-dark', 'text-white', 'shadow-md');
+                        b.classList.add('bg-white', 'text-slate-600', 'border', 'border-slate-200');
+                    });
+                    btn.classList.remove('bg-white', 'text-slate-600', 'border', 'border-slate-200');
+                    btn.classList.add('bg-brand-dark', 'text-white', 'shadow-md');
+
+                    const filterValue = btn.getAttribute('data-filter');
+
+                    serviceCards.forEach(card => {
+                        const categories = card.getAttribute('data-category');
+                        if (filterValue === 'all' || categories.includes(filterValue)) {
+                            card.classList.remove('hidden');
+                        } else {
+                            card.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+
+            // 4. Quick Order Form to WhatsApp Integration
+            const quickOrderForm = document.getElementById('quick-order-form');
+            const formFeedback = document.getElementById('form-feedback');
+            const formFeedbackText = document.getElementById('form-feedback-text');
+
+            quickOrderForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const name = document.getElementById('customer-name').value.trim();
+                const service = document.getElementById('service-select').value.trim();
+                const deadline = document.getElementById('deadline-input').value.trim();
+                const desc = document.getElementById('project-desc').value.trim();
+
+                if (!name || !service || !desc) {
+                    formFeedbackText.textContent = 'Mohon lengkapi Nama, Kategori Layanan, dan Deskripsi Kebutuhan Anda.';
+                    formFeedback.classList.remove('hidden');
+                    return;
+                }
+
+                formFeedback.classList.add('hidden');
+
+                const phoneNumber = '6285753987438';
+                let message = `Halo Admin *Adikom Digital & Creative*, saya ingin melakukan konsultasi/pemesanan:\n\n`;
+                message += `• *Nama/Instansi:* ${name}\n`;
+                message += `• *Layanan:* ${service}\n`;
+                if (deadline) {
+                    message += `• *Target Selesai:* ${deadline}\n`;
+                }
+                message += `• *Detail Kebutuhan:* ${desc}\n\n`;
+                message += `Mohon info estimasi biaya dan langkah selanjutnya. Terima kasih!`;
+
+                const encodedMessage = encodeURIComponent(message);
+                const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+                window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+            });
+
+            // 5. Interactive FAQ Accordion
+            const faqBtns = document.querySelectorAll('.faq-btn');
+
+            faqBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const content = btn.nextElementSibling;
+                    const icon = btn.querySelector('i');
+                    const isOpen = !content.classList.contains('hidden');
+
+                    // Close all other items
+                    document.querySelectorAll('.faq-content').forEach(item => item.classList.add('hidden'));
+                    document.querySelectorAll('.faq-btn i').forEach(ic => ic.classList.remove('rotate-180'));
+
+                    if (!isOpen) {
+                        content.classList.remove('hidden');
+                        icon.classList.add('rotate-180');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
